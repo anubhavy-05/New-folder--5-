@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake & Ladder Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Snake & Ladder Game</h1>
+        
+        <div class="game-controls">
+            <div class="player-section">
+                <div class="player red-player">
+                    <div class="player-token"></div>
+                    <p>Player 1 (Red)</p>
+                    <p>Position: <span id="p1-pos">0</span></p>
+                </div>
+                
+                <div class="dice-container">
+                    <div class="dice" id="dice">1</div>
+                    <button class="btn" id="rollBtn">Roll Dice</button>
+                    <p class="turn-info" id="turnInfo">Player 1's Turn</p>
+                </div>
+                
+                <div class="player blue-player">
+                    <div class="player-token"></div>
+                    <p>Player 2 (Blue)</p>
+                    <p>Position: <span id="p2-pos">0</span></p>
+                </div>
+            </div>
+            
+            <p class="message" id="message">Click Roll Dice to start!</p>
+        </div>
+
+        <div class="board">
+            <!-- Row 10 (100-91) -->
+            <div class="cell" data-cell="100">100</div>
+            <div class="cell" data-cell="99">99</div>
+            <div class="cell" data-cell="98">98<span class="snake-head">🐍</span></div>
+            <div class="cell" data-cell="97">97</div>
+            <div class="cell" data-cell="96">96</div>
+            <div class="cell" data-cell="95">95</div>
+            <div class="cell" data-cell="94">94</div>
+            <div class="cell" data-cell="93">93</div>
+            <div class="cell" data-cell="92">92</div>
+            <div class="cell" data-cell="91">91<span class="ladder-top">🪜</span></div>
+
+            <!-- Row 9 (81-90) -->
+            <div class="cell" data-cell="81">81</div>
+            <div class="cell" data-cell="82">82</div>
+            <div class="cell" data-cell="83">83</div>
+            <div class="cell" data-cell="84">84</div>
+            <div class="cell" data-cell="85">85</div>
+            <div class="cell" data-cell="86">86</div>
+            <div class="cell" data-cell="87">87<span class="snake-head">🐍</span></div>
+            <div class="cell" data-cell="88">88</div>
+            <div class="cell" data-cell="89">89</div>
+            <div class="cell" data-cell="90">90</div>
+
+            <!-- Row 8 (80-71) -->
+            <div class="cell" data-cell="80">80</div>
+            <div class="cell" data-cell="79">79</div>
+            <div class="cell" data-cell="78">78</div>
+            <div class="cell" data-cell="77">77</div>
+            <div class="cell" data-cell="76">76</div>
+            <div class="cell" data-cell="75">75<span class="snake-head">🐍</span></div>
+            <div class="cell" data-cell="74">74</div>
+            <div class="cell" data-cell="73">73</div>
+            <div class="cell" data-cell="72">72</div>
+            <div class="cell" data-cell="71">71</div>
+
+            <!-- Row 7 (61-70) -->
+            <div class="cell" data-cell="61">61</div>
+            <div class="cell" data-cell="62">62<span class="snake-head">🐍</span></div>
+            <div class="cell" data-cell="63">63<span class="ladder-top">🪜</span></div>
+            <div class="cell" data-cell="64">64</div>
+            <div class="cell" data-cell="65">65</div>
+            <div class="cell" data-cell="66">66</div>
+            <div class="cell" data-cell="67">67</div>
+            <div class="cell" data-cell="68">68<span class="ladder-bottom">🪜</span></div>
+            <div class="cell" data-cell="69">69<span class="ladder-top">🪜</span></div>
+            <div class="cell" data-cell="70">70</div>
+
+            <!-- Row 6 (60-51) -->
+            <div class="cell" data-cell="60">60</div>
+            <div class="cell" data-cell="59">59</div>
+            <div class="cell" data-cell="58">58</div>
+            <div class="cell" data-cell="57">57</div>
+            <div class="cell" data-cell="56">56</div>
+            <div class="cell" data-cell="55">55</div>
+            <div class="cell" data-cell="54">54<span class="snake-head">🐍</span></div>
+            <div class="cell" data-cell="53">53</div>
+            <div class="cell" data-cell="52">52</div>
+            <div class="cell" data-cell="51">51</div>
+
+            <!-- Row 5 (41-50) -->
+            <div class="cell" data-cell="41">41</div>
+            <div class="cell" data-cell="42">42<span class="ladder-bottom">🪜</span></div>
+            <div class="cell" data-cell="43">43</div>
+            <div class="cell" data-cell="44">44</div>
+            <div class="cell" data-cell="45">45</div>
+            <div class="cell" data-cell="46">46<span class="ladder-top">🪜</span></div>
+            <div class="cell" data-cell="47">47</div>
+            <div class="cell" data-cell="48">48</div>
+            <div class="cell" data-cell="49">49<span class="ladder-top">🪜</span></div>
+            <div class="cell" data-cell="50">50<span class="ladder-bottom">🪜</span></div>
+
+            <!-- Row 4 (40-31) -->
+            <div class="cell" data-cell="40">40</div>
+            <div class="cell" data-cell="39">39</div>
+            <div class="cell" data-cell="38">38</div>
+            <div class="cell" data-cell="37">37</div>
+            <div class="cell" data-cell="36">36<span class="snake-tail">🐍</span></div>
+            <div class="cell" data-cell="35">35</div>
+            <div class="cell" data-cell="34">34</div>
+            <div class="cell" data-cell="33">33<span class="ladder-bottom">🪜</span></div>
+            <div class="cell" data-cell="32">32<span class="snake-tail">🐍</span></div>
+            <div class="cell" data-cell="31">31</div>
+
+            <!-- Row 3 (21-30) -->
+            <div class="cell" data-cell="21">21</div>
+            <div class="cell" data-cell="22">22</div>
+            <div class="cell" data-cell="23">23</div>
+            <div class="cell" data-cell="24">24</div>
+            <div class="cell" data-cell="25">25<span class="ladder-top">🪜</span></div>
+            <div class="cell" data-cell="26">26</div>
+            <div class="cell" data-cell="27">27</div>
+            <div class="cell" data-cell="28">28<span class="snake-tail">🐍</span></div>
+            <div class="cell" data-cell="29">29</div>
+            <div class="cell" data-cell="30">30</div>
+
+            <!-- Row 2 (20-11) -->
+            <div class="cell" data-cell="20">20</div>
+            <div class="cell" data-cell="19">19<span class="snake-tail">🐍</span></div>
+            <div class="cell" data-cell="18">18<span class="snake-tail">🐍</span></div>
+            <div class="cell" data-cell="17">17</div>
+            <div class="cell" data-cell="16">16</div>
+            <div class="cell" data-cell="15">15</div>
+            <div class="cell" data-cell="14">14</div>
+            <div class="cell" data-cell="13">13<span class="ladder-bottom">🪜</span></div>
+            <div class="cell" data-cell="12">12</div>
+            <div class="cell" data-cell="11">11</div>
+
+            <!-- Row 1 (1-10) -->
+            <div class="cell start" data-cell="1">1<br>START</div>
+            <div class="cell" data-cell="2">2</div>
+            <div class="cell" data-cell="3">3</div>
+            <div class="cell" data-cell="4">4<span class="ladder-bottom">🪜</span></div>
+            <div class="cell" data-cell="5">5</div>
+            <div class="cell" data-cell="6">6</div>
+            <div class="cell" data-cell="7">7</div>
+            <div class="cell" data-cell="8">8</div>
+            <div class="cell" data-cell="9">9</div>
+            <div class="cell" data-cell="10">10</div>
+        </div>
+
+        <button class="btn reset-btn" id="resetBtn">New Game</button>
+    </div>
+
+    <script>
+        let currentPlayer = 1;
+        let player1Position = 0;
+        let player2Position = 0;
+
+        const snakes = {
+            98: 28,
+            87: 36,
+            75: 32,
+            54: 19,
+            62: 18
+        };
+
+        const ladders = {
+            4: 25,
+            13: 46,
+            33: 49,
+            42: 63,
+            50: 69,
+            68: 91
+        };
+
+        const rollBtn = document.getElementById('rollBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const dice = document.getElementById('dice');
+        const message = document.getElementById('message');
+        const turnInfo = document.getElementById('turnInfo');
+        const p1Pos = document.getElementById('p1-pos');
+        const p2Pos = document.getElementById('p2-pos');
+
+        rollBtn.addEventListener('click', () => {
+            const diceValue = Math.floor(Math.random() * 6) + 1;
+            dice.textContent = diceValue;
+            
+            const currentPos = currentPlayer === 1 ? player1Position : player2Position;
+            let newPos = currentPos + diceValue;
+            
+            if (newPos > 100) {
+                message.textContent = `Player ${currentPlayer} needs exactly ${100 - currentPos} to win!`;
+                switchPlayer();
+                return;
+            }
+            
+            message.textContent = `Player ${currentPlayer} rolled ${diceValue}`;
+            
+            setTimeout(() => {
+                updatePosition(newPos);
+                
+                if (snakes[newPos]) {
+                    setTimeout(() => {
+                        message.textContent = `Snake bite! Sliding down to ${snakes[newPos]}`;
+                        updatePosition(snakes[newPos]);
+                        checkWin();
+                    }, 800);
+                } else if (ladders[newPos]) {
+                    setTimeout(() => {
+                        message.textContent = `Ladder! Climbing up to ${ladders[newPos]}`;
+                        updatePosition(ladders[newPos]);
+                        checkWin();
+                    }, 800);
+                } else {
+                    checkWin();
+                }
+            }, 500);
+        });
+
+        function updatePosition(pos) {
+            document.querySelectorAll('.token').forEach(t => t.remove());
+            
+            if (currentPlayer === 1) {
+                player1Position = pos;
+                p1Pos.textContent = pos;
+            } else {
+                player2Position = pos;
+                p2Pos.textContent = pos;
+            }
+            
+            if (player1Position > 0) {
+                const cell = document.querySelector(`[data-cell="${player1Position}"]`);
+                const token = document.createElement('div');
+                token.className = 'token red-token';
+                token.textContent = '1';
+                cell.appendChild(token);
+            }
+            
+            if (player2Position > 0) {
+                const cell = document.querySelector(`[data-cell="${player2Position}"]`);
+                const token = document.createElement('div');
+                token.className = 'token blue-token';
+                token.textContent = '2';
+                cell.appendChild(token);
+            }
+        }
+
+        function checkWin() {
+            const pos = currentPlayer === 1 ? player1Position : player2Position;
+            if (pos === 100) {
+                message.textContent = `🎉 Player ${currentPlayer} WINS! 🎉`;
+                rollBtn.disabled = true;
+            } else {
+                setTimeout(switchPlayer, 1500);
+            }
+        }
+
+        function switchPlayer() {
+            currentPlayer = currentPlayer === 1 ? 2 : 1;
+            turnInfo.textContent = `Player ${currentPlayer}'s Turn`;
+        }
+
+        resetBtn.addEventListener('click', () => {
+            player1Position = 0;
+            player2Position = 0;
+            currentPlayer = 1;
+            p1Pos.textContent = '0';
+            p2Pos.textContent = '0';
+            turnInfo.textContent = "Player 1's Turn";
+            message.textContent = 'Click Roll Dice to start!';
+            dice.textContent = '1';
+            rollBtn.disabled = false;
+            document.querySelectorAll('.token').forEach(t => t.remove());
+        });
+    </script>
+</body>
+</html>
