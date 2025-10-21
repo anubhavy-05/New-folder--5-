@@ -69,4 +69,30 @@ h1 {
     background: #4CAF50;
 }
 
-.
+.toggle-checkbox:checked + .toggle-label .egg {
+    left: 65px;
+    transform: rotate(180deg);
+}
+
+/* Status Text */
+.status {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #333;
+}
+
+#status-text {
+    font-weight: bold;
+    color: #f44336;
+    transition: color 0.3s;
+}
+
+/* Hover Effect */
+.toggle-label:hover {
+    opacity: 0.9;
+}
+
+/* Active Effect */
+.toggle-label:active .egg {
+    width: 55px;
+}
