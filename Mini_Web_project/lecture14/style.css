@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #0a0a0a;
+    color: #00ff00;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animated background lines */
+.line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(transparent, #00ff00, transparent);
+    animation: moveLines 3s linear infinite;
+    opacity: 0.3;
+}
+
+.line:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.line:nth-child(2) {
+    left: 40%;
+    animation-delay: 0.5s;
+}
+
+.line:nth-child(3) {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.line:nth-child(4) {
+    left: 80%;
+    animation-delay: 1.5s;
+}
+
