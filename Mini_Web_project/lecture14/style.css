@@ -152,3 +152,25 @@ input::placeholder {
     transform: scale(1.02);
 }
 
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.6;
+    color: #ff0000;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+}
