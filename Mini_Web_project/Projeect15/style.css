@@ -1,0 +1,25 @@
+/* Simple Dot Navigation Menu styles - easy to read and edit */
+:root{
+  --bg: #f7f7f9;
+  --accent: #2b6cff; /* blue accent */
+  --dot-size: 16px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: #111;
+  margin: 0;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+main{
+  max-width: 520px;
+  width: 100%;
+}
+h1{
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+}
