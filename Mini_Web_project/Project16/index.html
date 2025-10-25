@@ -41,4 +41,51 @@
         </div>
     </div>
 
+    <script>
+        
+        const loginBtn = document.querySelector('.login-btn');
+        const logoutBtn = document.querySelector('.logout-btn');
+        const loginScene = document.querySelector('.login-section .scene');
+        const logoutScene = document.querySelector('.logout-section .scene');
+        const loginStatus = document.querySelector('.login-section .status');
+        const logoutStatus = document.querySelector('.logout-section .status');
+        
+        let isLoggedIn = false;
+        
+        
+        loginBtn.addEventListener('click', function() {
+            if (!isLoggedIn) {
+        
+                loginScene.classList.add('login-animation');
+                
+            
+                loginStatus.textContent = 'Logging in...';
+                logoutStatus.textContent = 'Currently logged in';
+                
+                
+                setTimeout(() => {
+                    isLoggedIn = true;
+                    loginStatus.textContent = 'Logged in!';
+                }, 1500);
+            }
+        });
+        
+        logoutBtn.addEventListener('click', function() {
+            if (isLoggedIn) {
+            
+                logoutScene.classList.add('logout-animation');
+                
     
+                logoutStatus.textContent = 'Logging out...';
+                loginStatus.textContent = 'Not logged in';
+                
+                
+                setTimeout(() => {
+                    isLoggedIn = false;
+                    logoutStatus.textContent = 'Logged out!';
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>
