@@ -19,6 +19,11 @@ This project creates a beautiful, responsive invitation card that can be used fo
 ---
 
 ## 📁 File Structure
+invitation-card/
+│
+├── invitation.html    # Main HTML file
+├── style.css         # CSS stylesheet
+└── README.md         # Project documentation (this file)
 
 ---
 
