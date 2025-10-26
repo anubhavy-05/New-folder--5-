@@ -48,3 +48,84 @@ body {
     font-size: 1.8em;
 }
 
+.celebrant {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.details {
+    margin: 25px 0;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+.value {
+    color: #555;
+    text-align: right;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.6;
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #e8f4ff;
+    border-radius: 8px;
+}
+
+.rsvp {
+    text-align: center;
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.rsvp p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .invitation-card {
+        margin: 10px;
+    }
+    
+    .card-header h1 {
+        font-size: 2em;
+    }
+    
+    .card-content h2 {
+        font-size: 1.5em;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .value {
+        text-align: center;
+        margin-top: 5px;
+    }
+}
