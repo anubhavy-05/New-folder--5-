@@ -45,4 +45,34 @@
         });
         
         
+        document.addEventListener('click', () => {
+            cursor.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                cursor.style.transform = 'scale(1)';
+            }, 100);
+        });
         
+
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover-box');
+            });
+            box.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover-box');
+            });
+        });
+        
+        
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover-btn');
+            });
+            button.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover-btn');
+            });
+        });
+    </script>
+</body>
+</html>
