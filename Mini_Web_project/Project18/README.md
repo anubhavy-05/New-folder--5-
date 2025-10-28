@@ -27,3 +27,17 @@ This is a modern and colorful **Interactive Cursor Web Project** built using **H
 
 ## 📁 Project Structure
 
+interactive-cursor-project/
+├── index.html
+├── style.css
+└── README.md
+
+> *(Note: JavaScript is included inside `index.html` in a `<script>` tag.)*
+
+---
+
+## 🔧 How to Run This Project
+
+1. Download or clone this repository:
+   ```bash
+   git clone https://github.com/your-username/interactive-cursor-project.git
